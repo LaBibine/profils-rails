@@ -1,0 +1,80 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// application.scss
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+/************************* HEADER *************************/
+
+.button-principal {
+    color: #F8F8F8;
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    border: 1px solid #045de9;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: lighter;
+    text-decoration: none;
+  }
+  
+.button-principal:hover {
+    color: white;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+    transition: opacity 0.3s ease;
+}
+  
+  /************************* HEADER *************************/
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+  
+  /************************* MAIN *************************/
+
+.card-profils {
+    overflow: hidden;
+    height: 120px;
+    width: 900px;
+    background: white;
+    box-shadow: 0 0 0.25rem rgb(65,105,225);
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.card-profils img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+}
+
+.card-profils h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-profils p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.card-profils .card-infos {
+    padding: 2rem;
+}
+
+.card-infos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    line-height: 1.6;
+    grid-gap: 5rem;
+}

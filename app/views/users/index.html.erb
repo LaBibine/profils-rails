@@ -1,0 +1,31 @@
+  <header>
+    <h1>Welcome to our users profile page</h1>
+    <p>You can look for users profiles and save them</p>
+    <%= form_with url: "/users", method: :post do |form| %>
+    <%= form.label :number, "Number of people to display:" %>
+    <%= form.text_field :number %>
+    <%= form.submit "Confirm" %>
+    <% end %>
+  </header>
+  <main>
+    <section>
+        <div class="card-profils"> 
+            <img src="<%= @user["results"][0]["picture"]["medium"] %>"/>
+        <div class="card-infos">
+        <div>
+            <h2><i class="fas fa-user-circle fa-lg fa-fw"></i>  Title, Fistname, Lastname</h2>
+            <%=@user["results"][0]["name"]["title"] %>,
+            <%= @user["results"][0]["name"]["first"] %>,
+            <%= @user["results"][0]["name"]["last"] %>
+            <h2><i class="fas fa-map-marker-alt fa-lg fa-fw"></i>  Address</h2>
+        </div>
+        <div>
+            <h2><i class="fas fa-phone-alt fa-lg fa-fw"></i>  Phone</h2>
+            <h2><i class="fas fa-envelope fa-lg fa-fw"></i>  Email</h2>  
+        </div>
+        <div>
+            <a class="button-principal" href="#" target="_black">Save</a>
+        </div>
+        </div>
+    </section>
+  </main>

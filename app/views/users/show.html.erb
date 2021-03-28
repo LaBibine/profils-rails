@@ -1,0 +1,45 @@
+<header>
+    <h1>Welcome to our users profile page</h1>
+    <p>You can look for users profiles and save them</p>
+    <%= form_with url: "/users", method: :post do |form| %>
+    <%= form.label :number, "Number of people to display:" %>
+    <%= form.text_field :number %>
+    <%= form.submit "Confirm" %>
+    <% end %>
+  </header>
+  <main>
+    <section>
+    <% @users["results"].each do |user| %>
+        <div class="card-profils"> 
+            <img src="<%= user["picture"]["medium"] %>"/>
+            <div class="card-infos">
+                <div>
+                    <h2><i class="fas fa-user-circle fa-lg fa-fw"></i>  Title, Fistname, Lastname</h2>
+                    <%= user["name"]["title"] %>,
+                    <%= user["name"]["first"] %>,
+                    <%= user["name"]["last"] %>
+                    <h2><i class="fas fa-map-marker-alt fa-lg fa-fw"></i>  Address</h2>
+                    <p>toutes les infos sont ici!</p>
+                </div>
+                <div>
+                    <h2><i class="fas fa-phone-alt fa-lg fa-fw"></i>  Phone</h2>
+                    <p>toutes les infos sont ici!</p>
+                    <h2><i class="fas fa-envelope fa-lg fa-fw"></i>  Email</h2>
+                    <p>toutes les infos sont ici!</p>
+                </div>
+                <div>
+                <form action="/create/user" accept-charset="UTF-8" method="post">
+                    <input type="hidden" name="title" value="<%= user["name"]["title"] %>">
+                    <input type="hidden" name="first_name" value="<%= user["name"]["first"] %>">
+                    <input type="hidden" name="last_name" value="<%= user["name"]["last"] %>">
+                    <input type="hidden" name="address" value="">
+                    <input type="hidden" name="phone" value="">
+                    <input type="hidden" name="email" value="">
+                    <button class="button-principal" type="submit">Save</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </section>
+  </main>

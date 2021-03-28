@@ -5,7 +5,7 @@ one:
   first_name: MyString
   last_name: MyString
   address: MyString
-  phone: 1
+  phone: MyString
   email: MyString
 
 two:
@@ -13,5 +13,5 @@ two:
   first_name: MyString
   last_name: MyString
   address: MyString
-  phone: 1
+  phone: MyString
   email: MyString
