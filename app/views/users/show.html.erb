@@ -8,16 +8,23 @@
 </head>
 <body>
   <header>
-    <%= form_with url: "/users", method: :post do |form| %>
-    <%= form.label :number, "Number of people to display:" %>
-    <%= form.text_field :number %>
-    <%= form.submit "Confirm" %>
-    <% end %>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/data">Profiles</a>
+            </div>
+        </nav>
+    </div>
+        <%= form_with url: "/users/show", method: :post do |form| %>
+        <%= form.label :number, "Number of people to display:" %>
+        <%= form.text_field :number %>
+        <%= form.submit "Confirm" %>
+        <% end %>
   </header>
   <main>
     <section>
         <% @users["results"].each do |user| %>
-            <div class="container">
+            <div class="box">
                 <div class="card-profils"> 
                     <img src="<%= user["picture"]["medium"] %>"/>
                     <div class="card-infos">

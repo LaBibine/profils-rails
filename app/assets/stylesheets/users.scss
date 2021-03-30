@@ -8,6 +8,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/regular';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
+@import "bootstrap";
 
 /************************* HEADER *************************/
 
@@ -29,16 +30,21 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
-  
+
+
   /************************* HEADER *************************/
 header {
     margin-bottom: 2rem;
     text-align: center;
-    margin-top: 4rem;
 }
   
   /************************* MAIN *************************/
-.container {
+
+main {
+    text-align: center;
+}
+
+.box{
     height: 200px;
     display: flex;
     align-items: center;
@@ -46,6 +52,13 @@ header {
     margin-bottom: -46px;
 }
 
+.container-data {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -46px;
+}
 .card-profils {
     overflow: hidden;
     height: 120px;
@@ -55,6 +68,20 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+}
+
+.card-data {
+    overflow: hidden;
+    height: 120px;
+    width: 600px;
+    background: white;
+    box-shadow: 0 0 0.25rem rgb(65,105,225);
+    margin-bottom: 0.5rem;
+}
+.card-data h2 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 8px 0px 8px;
 }
 
 .card-profils img {

@@ -55,4 +55,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#adding fontawesome
+#adding rake
+gem 'rake', '~> 13.0', '>= 13.0.3'
+
+#active record
+
+gem 'activerecord-session_store'
+
+#bootstrap
+gem 'bootstrap', '~> 4.0'

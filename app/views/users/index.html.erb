@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
   </head>
-  <body>
-  <header>
-    <h1>Welcome to our users' profiles page</h1>
-    <p>You can look for users' profiles and save them</p>
-    <%= form_with url: "/users", method: :post do |form| %>
-    <%= form.label :number, "Number of people to display:" %>
-    <%= form.text_field :number %>
-    <%= form.submit "Confirm" %>
-    <% end %>
-  </header>
-  </body>
+    <body>
+      <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/data">Profiles</a>
+          </div>
+        </nav>
+      </div>
+      </header>
+      <main>
+        <h1>Welcome to our users' profiles page</h1>
+          <p>You can look for users' profiles and save them</p>
+            <%= form_with url: "/users/show", method: :post do |form| %>
+            <%= form.label :number, "Number of people to display:" %>
+            <%= form.text_field :number %>
+            <%= form.submit "Confirm" %>
+            <% end %>
+      </main>
+    </body>
 </html>
