@@ -1,6 +1,13 @@
-<header>
-    <h1>Welcome to our users profile page</h1>
-    <p>You can look for users profiles and save them</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users profile</title>
+</head>
+<body>
+  <header>
     <%= form_with url: "/users", method: :post do |form| %>
     <%= form.label :number, "Number of people to display:" %>
     <%= form.text_field :number %>
@@ -9,37 +16,40 @@
   </header>
   <main>
     <section>
-    <% @users["results"].each do |user| %>
-        <div class="card-profils"> 
-            <img src="<%= user["picture"]["medium"] %>"/>
-            <div class="card-infos">
-                <div>
-                    <h2><i class="fas fa-user-circle fa-lg fa-fw"></i>  Title, Fistname, Lastname</h2>
-                    <%= user["name"]["title"] %>,
-                    <%= user["name"]["first"] %>,
-                    <%= user["name"]["last"] %>
-                    <h2><i class="fas fa-map-marker-alt fa-lg fa-fw"></i>  Address</h2>
-                    <p>toutes les infos sont ici!</p>
-                </div>
-                <div>
-                    <h2><i class="fas fa-phone-alt fa-lg fa-fw"></i>  Phone</h2>
-                    <p>toutes les infos sont ici!</p>
-                    <h2><i class="fas fa-envelope fa-lg fa-fw"></i>  Email</h2>
-                    <p>toutes les infos sont ici!</p>
-                </div>
-                <div>
-                <form action="/create/user" accept-charset="UTF-8" method="post">
-                    <input type="hidden" name="title" value="<%= user["name"]["title"] %>">
-                    <input type="hidden" name="first_name" value="<%= user["name"]["first"] %>">
-                    <input type="hidden" name="last_name" value="<%= user["name"]["last"] %>">
-                    <input type="hidden" name="address" value="">
-                    <input type="hidden" name="phone" value="">
-                    <input type="hidden" name="email" value="">
-                    <button class="button-principal" type="submit">Save</button>
-                </form>
+        <% @users["results"].each do |user| %>
+            <div class="container">
+                <div class="card-profils"> 
+                    <img src="<%= user["picture"]["medium"] %>"/>
+                    <div class="card-infos">
+                        <div>
+                            <h2><i class="fas fa-user-circle fa-lg fa-fw"></i>  <%= user["name"]["title"] %>, <%= user["name"]["first"] %>, <%= user["name"]["last"] %>
+                            </h2>
+                            <h2><i class="fas fa-map-marker-alt fa-lg fa-fw"></i>  <%= user["location"]["street"]["number"] %> <%= user["location"]["street"]["name"] %>,   <%= user["location"]["state"] %> <%= user["location"]["postcode"] %>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2><i class="fas fa-phone-alt fa-lg fa-fw"></i> <%= user["phone"] %></h2>
+                            <h2><i class="fas fa-envelope fa-lg fa-fw"></i>  <%= user["email"] %></h2>
+                        </div>
+                        <div>
+                        <form action="/create" accept-charset="UTF-8" method="post">
+                            <input type="hidden" name="title" value="<%= user["name"]["title"] %>">
+                            <input type="hidden" name="first_name" value="<%= user["name"]["first"] %>">
+                            <input type="hidden" name="last_name" value="<%= user["name"]["last"] %>">
+                            <input type="hidden" name="address" value=" <%= user["location"]["street"]["number"] %> <%= user["location"]["street"]["name"] %> <%= user["location"]["state"] %> <%= user["location"]["postcode"] %>">
+                            <input type="hidden" name="phone" value="<%= user["phone"] %>">
+                            <input type="hidden" name="email" value="<%= user["email"] %>">
+                            <input type="hidden" name="users" value="<%= @users %>">
+                            <button class="button-principal" type="submit">Save</button>
+                        </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    <% end %>
+        <% end %>
     </section>
-  </main>
+  </main>   
+</body>
+</html>
+
+
