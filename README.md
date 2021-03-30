@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. J'ai crée un application Rails
 
-Things you may want to cover:
+2. Interrogé l'api random user https://randomuser.me et afficher les profils des utilisateurs
 
-* Ruby version
+3. Ajouté un input "number of people to display" qui permet d'afficher plusieurs profils en même temps
 
-* System dependencies
+4. Ajouté un bouton sur l'interface "save" pour enregistrer un utilisateur affiché dans la base de données
 
-* Configuration
+5. Dans une autre page, j'ai affiché les utilisateurs enregistrés dans la base de données et non depuis l'api
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6. J'ai ajouté un bouton "export" afin exporter tous les utilisateurs qui sont dans la base de données en format csv present dans data.csv
