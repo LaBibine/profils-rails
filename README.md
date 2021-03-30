@@ -10,4 +10,4 @@
 
 5. Dans une autre page, j'ai affiché les utilisateurs enregistrés dans la base de données et non depuis l'api
 
-6. J'ai ajouté un bouton "export" afin exporter tous les utilisateurs qui sont dans la base de données en format csv ( dossier: data.csv)
+6. Ajouté un bouton "export" afin exporter tous les utilisateurs qui sont dans la base de données en format csv ( dossier: data.csv)
