@@ -1,8 +1,8 @@
 # README
 
-1. J'ai crée un application Rails
+1. Crée un application Rails
 
-2. Interrogé l'api random user https://randomuser.me et afficher les profils des utilisateurs
+2. Interrogé l'api random user https://randomuser.me et affiché les profils des utilisateurs
 
 3. Ajouté un input "number of people to display" qui permet d'afficher plusieurs profils en même temps
 
@@ -10,4 +10,4 @@
 
 5. Dans une autre page, j'ai affiché les utilisateurs enregistrés dans la base de données et non depuis l'api
 
-6. J'ai ajouté un bouton "export" afin exporter tous les utilisateurs qui sont dans la base de données en format csv present dans data.csv
+6. J'ai ajouté un bouton "export" afin exporter tous les utilisateurs qui sont dans la base de données en format csv ( dossier: data.csv)
